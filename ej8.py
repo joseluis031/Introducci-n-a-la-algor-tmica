@@ -1,6 +1,3 @@
-from tkinter import N
-
-
 class prima_anual:
     def __init__(self, antiguedad,distancia,accidentes): #constructor
         self.antiguedad = antiguedad

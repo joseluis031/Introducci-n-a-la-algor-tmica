@@ -20,3 +20,6 @@ def entrada(valor):
 if __name__ == "__main__":
     altura = entrada("¿altura del triangulo?")
     lado = entrada("¿longitud del lado del triangulo?")
+    
+total = area_triangulo(altura=altura,lado=lado)
+print ("El area del triangulo es: {}".format(total.area(altura,lado)))
