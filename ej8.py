@@ -8,10 +8,10 @@ class prima_anual:
         if self.antiguedad < 4:
             return 0
         else:
-            return 200 + 20*(self.antiguedad -4)
+            return 200 + 20*(self.antiguedad - 4)
     
     def prima_distancia(self):   #calcula impuesto por distancia
-        return (self.distancia*0.01, 400)
+        return min(self.distancia*0.01, 400) #necesito el valor minimo
     
     def prima_ponderada(self, prima_antiguedad, prima_distancia): #calculo la media ponderada dependiendo del numero de accidentes
         prima_total = prima_antiguedad + prima_distancia
