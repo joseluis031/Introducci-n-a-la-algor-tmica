@@ -31,7 +31,7 @@ def entrada(valor):
             n = int(n)
             break
         except:
-            print("Introduzca un numero por favor")
+            print("Introduzca un numero sin decimales por favor")
             pass
     return n 
 
