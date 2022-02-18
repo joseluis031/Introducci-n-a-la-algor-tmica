@@ -7,7 +7,7 @@ class precios:
         self.IVA = IVA
         self.precio_conimpuestos = precio_conimpuestos
     def con_impuestos(self):
-       self.precio_conimpuestos = self.precio + self.precio*0.01*self.IVA
+       self.precio_conimpuestos = round(self.precio + self.precio*0.01*self.IVA, 2)
        print("El precio final con impuestos es: ",self.precio_conimpuestos)
 
 resultado = precios(precio, IVA,precio_conimpuestos)
@@ -24,7 +24,7 @@ class fincas:
         self.meses = meses
         self.importe = importe
     def importe_interes(self):
-        self.importe = round(self.capital_invertido* self.interes*self.meses, 0)
+        self.importe = round(self.capital_invertido* self.interes*self.meses, 2)
         print("El importe de interes de ", capital_invertido, " a un ", interes*100, "% durante ", meses, " meses es de ", self.importe, " €")
         
 resultado2 = fincas(capital_invertido,interes,meses, importe)
