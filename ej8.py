@@ -1,43 +1,31 @@
-class prima_anual:
-    def __init__(self, antiguedad,distancia,accidentes): #constructor
-        self.antiguedad = antiguedad
-        self.distancia = distancia
-        self.accidentes = accidentes
+precio = float(input("Precio sin IVA: "))
+IVA = 21
+precio_conimpuestos = 0
+class precios:
+    def __init__(self, precio, IVA,precio_conimpuestos): #defino el constructor
+        self.precio = precio
+        self.IVA = IVA
+        self.precio_conimpuestos = precio_conimpuestos
+    def con_impuestos(self):
+       self.precio_conimpuestos = self.precio + self.precio*0.01*self.IVA
+       print("El precio final con impuestos es: ",self.precio_conimpuestos)
+
+resultado = precios(precio, IVA,precio_conimpuestos)
+print(resultado.con_impuestos())
+
+capital_invertido = float(input("Capital invertido: "))
+interes = float(input("Interes: "))
+meses= int(input("¿A cuantos meses?"))
+importe = 0
+class fincas:
+    def __init__(self,capital_invertido,interes,meses, importe):
+        self.capital_invertido = capital_invertido
+        self.interes = interes
+        self.meses = meses
+        self.importe = importe
+    def importe_interes(self):
+        self.importe = round(self.capital_invertido* self.interes*self.meses, 0)
+        print("El importe de interes de ", capital_invertido, " a un ", interes*100, "% durante ", meses, " meses es de ", self.importe, " €")
         
-    def prima_antiguedad(self): #calcula impuesto por antiguedad
-        if self.antiguedad < 4:
-            return 0
-        else:
-            return 200 + 20*(self.antiguedad - 4)
-    
-    def prima_distancia(self):   #calcula impuesto por distancia
-        return min(self.distancia*0.01, 400) #necesito el valor minimo
-    
-    def prima_ponderada(self, prima_antiguedad, prima_distancia): #calculo la media ponderada dependiendo del numero de accidentes
-        prima_total = prima_antiguedad + prima_distancia
-        if self.accidentes <= 3:
-            prima_total = prima_total / (self.accidentes + 1)
-        else:
-            prima_total = 0
-        return prima_total
-    
-def entrada(valor):
-    while True:
-        n = input("{}:".format(valor))
-        try:
-            n = int(n)
-            break
-        except:
-            print("Introduzca un numero sin decimales por favor")
-            pass
-    return n 
-
-if __name__ == "__main__":
-    
-    antiguedad = entrada("antiguedad")
-    distancia = entrada("distancia")
-    accidentes = entrada("accidentes")
-    
-final= prima_anual(antiguedad=antiguedad, distancia=distancia, accidentes=accidentes)
-
-print("La prima ponderada es: {}".format(final.prima_ponderada(final.prima_antiguedad(),final.prima_distancia())))
+resultado2 = fincas(capital_invertido,interes,meses, importe)
+print(resultado2.importe_interes())
