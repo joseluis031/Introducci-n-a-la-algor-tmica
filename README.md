@@ -1,6 +1,7 @@
 # Introduccion-a-la-algoritmica
 La direccion de GitHub de este repositorio es: [GitHub](https://github.com/joseluis031/Introduccion-a-la-algoritmica.git)
 
+He realizado los ejercicios en código python utilizando recursividad
 ## Ejercicio 8: Porcentajes, IVA e inversiones
 ```
 precio = float(input("Precio sin IVA: "))
