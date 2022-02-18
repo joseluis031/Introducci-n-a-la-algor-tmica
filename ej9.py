@@ -16,7 +16,7 @@ class media_notas:
         return round((self.nota1 + self.nota2 + self.nota3)/3,0)
 
 
-
+    
 resultado = media_notas(nota1, nota2, nota3)  
 print("La media aritmetica es:", resultado.media_aritmetica())
 print("La media ponderada es:",resultado.media_ponderada())
